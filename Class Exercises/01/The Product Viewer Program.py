@@ -6,9 +6,9 @@ product3 = Product("Economy Duct Tape", 12.99, 62)
 def title():
     print("The Product Viewer Program\n")
     print("Products")
-    for product in enumerate([product1.name, product2.name, product3.name],start=0):
+    for i, product in enumerate([product1.name, product2.name, product3.name],start=0):
 
-        print(product)
+        print(i, product)
 
 
 def main():
