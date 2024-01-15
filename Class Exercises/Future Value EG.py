@@ -8,7 +8,7 @@ while True:
 
 
 
-    print(f'\nMonthly investment: {lc.currency(month_i)}')
+    print(f'\nMonthly investment: {lc.currency(month_i,grouping=True)}')
     print(f'Interest Rate: {year_i}')
     print(f'Years: {years}')
     future_value = 0
@@ -16,7 +16,7 @@ while True:
         future_value += month_i
         mont_interest = future_value * ((year_i/12)/100)
         future_value += mont_interest
-    print(f"Future Value: {lc.currency(future_value)}")
+    print(f"Future Value: {lc.currency(future_value,grouping=True)}")
     cont = input("\nContinue? (y/n)")
     if cont.lower() == 'n':
         print('Bye!')
