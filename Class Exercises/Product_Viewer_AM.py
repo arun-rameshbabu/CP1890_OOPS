@@ -17,8 +17,15 @@ def user_input():
     This function accepts and returns an input from the user.
     :return user (int):
     """
-    user = int(input("Enter product number: "))
-    return user
+    while True:
+        try:
+            user = int(input("Enter product number: "))
+            if user < 1 or user > len(products_list()):
+                print("Invalid Input")
+            else:
+                return user
+        except ValueError:
+            print("Invalid Input, please try again")
 
 def select_product(choice):
     """
