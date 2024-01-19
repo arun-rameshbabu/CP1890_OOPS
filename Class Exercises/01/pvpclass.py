@@ -2,8 +2,8 @@ from dataclasses import dataclass
 @dataclass
 class Product:
     name: str
-    price: float
-    discountPercent: int
+    price: float = 0.0
+    discountPercent: float = 0.0
 
     def getDiscountamount(self):
         """
@@ -13,4 +13,4 @@ class Product:
         return self.price * (self.discountPercent/100)
 
     def getDiscountprice(self):
-        return self.price - self.getDiscountamount()
+        return self.price * self.getDiscountamount()
