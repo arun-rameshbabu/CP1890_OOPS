@@ -10,9 +10,9 @@ def show_ind_product(product):
     width = 18
     print(f"{'Name:':{width}} {product.name}")
     print(f"{'Price:':{width}} {product.price:.2f}")
-    print(f"{'Discount Percent:':{width}} {product.discount_percent:d}%")
-    print(f"{'Discount Rate:': {width}} {product.getDiscountamount():.2f}")
-    print(f"{'Discount Price:': {width}} {product.getDiscountprice():.2f}")
+    print(f"{'Discount Percent:':{width}} {product.discountPercent:d}%")
+    print(f"{'Discount Rate:':{width}} {product.getDiscountamount():.2f}")
+    print(f"{'Discount Price:':{width}} {product.getDiscountprice():.2f}")
     print()
 
 def get_products():
@@ -40,7 +40,7 @@ def main():
     choice = 'y'
     while choice.lower() == 'y':
         product = get_individual_product(products)
-        show_products(product)
+        show_ind_product(product)
 
         choice = input("View Another Product? (y/n): ").lower()
         print()
