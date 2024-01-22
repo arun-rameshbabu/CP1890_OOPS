@@ -1,24 +1,28 @@
 import random
 from dataclasses import dataclass
 
+
 @dataclass
 class Die:
-    value: int = 1
+    __value: int = 1
 
     def roll(self):
-        self.value = random.randint(1, 6)
+        self.__value = random.randint(1, 6)
 
-@dataclass
+    def get_value(self):
+        return self.__value
+
+
 class Dice:
-    list_die: list[Die] = None
+    def __init__(self):
+        self.__list_die = []
 
-    def __post_init__(self):
-        if self.list_die is None:
-            self.list_die = []
+    def add_die(self, die):
+        self.__list_die.append(die)
 
-    def addDie(self, die):
-        self.list_die.append(die)
-
-    def rollAll(self):
-        for die in self.list_die:
+    def roll_all(self):
+        for die in self.__list_die:
             die.roll()
+
+    def get_die_values(self):
+        return [die.get_value() for die in self.__list_die]
