@@ -1,5 +1,4 @@
-from Dice_Roller_Classes import Die, Dice
-
+from DRC import Die, Dice
 
 def main():
     print("The Dice Roller program\n")
@@ -8,7 +7,7 @@ def main():
     num_dice = int(input("Enter the number of dice to roll: "))
 
     dice = Dice()
-    for i in range(num_dice):
+    for _ in range(num_dice):
         die = Die()
         dice.addDie(die)
 
@@ -24,7 +23,6 @@ def main():
         choice = input("Roll again? (y/n): ")
 
     print("Bye!")
-
 
 if __name__ == "__main__":
     main()
