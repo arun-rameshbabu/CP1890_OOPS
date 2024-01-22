@@ -3,7 +3,7 @@ import random as r
 
 
 class Dice:
-    def __int__(self):
+    def __init__(self):
         self.list_dice = []
 
     def add_die(self, die):

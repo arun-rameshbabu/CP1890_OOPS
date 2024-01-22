@@ -15,7 +15,7 @@ def main():
         for die in dice.list_dice:
             print(die.value, end=' ')
 
-        roll = input("Roll again? (y/n): ")
+        roll = input("\nRoll again? (y/n): ")
         if roll == 'n':
             print("\nBye!")
             break
