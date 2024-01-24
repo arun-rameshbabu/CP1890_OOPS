@@ -9,7 +9,7 @@ def show_products(products):
 def show_ind_product(product):
     width = 18
     print(f"{'Name:':{width}} {product.name}")
-    print(f"{'Price:':{width}} {product.price:.2f}")
+    print(f"{'Price:':{width}} {product.get_price:.2f}")
     print(f"{'Discount Percent:':{width}} {product.discountPercent:d}%")
     print(f"{'Discount Rate:':{width}} {product.getDiscountamount():.2f}")
     print(f"{'Discount Price:':{width}} {product.getDiscountprice():.2f}")
