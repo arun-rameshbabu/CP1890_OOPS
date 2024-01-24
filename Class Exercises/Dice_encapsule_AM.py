@@ -17,7 +17,7 @@ class Dice:
         self.__list_die = []
 
     def read_list(self):
-        return self.__list_die
+        return tuple(self.__list_die)
 
     def addDie(self, die):
         self.__list_die.append(die)
