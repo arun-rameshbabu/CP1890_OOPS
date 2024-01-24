@@ -13,8 +13,8 @@ def main():
     while cont == 'y':
         dice.rollAll()
         print('YOUR ROLL: ', end='')
-        for die in dice.read_list():
-            print(die.getValue(), end=' ')
+        for die in dice.read_list:
+            print(die.getValue, end=' ')
         print('\n')
         cont = input('Roll Again? (y/n): ')
     print('Bye!')
