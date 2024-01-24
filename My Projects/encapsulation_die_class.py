@@ -6,8 +6,9 @@ class Dice:
     def __init__(self):
         self.__list_dice = []
 
-    def list_die(self):
-        return self.__list_dice
+    @property
+    def list_dice(self):
+        return tuple(self.__list_dice)
 
     def add_die(self, die):
         self.__list_dice.append(die)
