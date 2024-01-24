@@ -3,11 +3,15 @@ from dataclasses import dataclass
 @dataclass
 class Product:
     name: str = ""
-    price: float = 0.0
+    __price: float = 0.0
     discount_percent: float = 0.0
 
     def get_discount_amount(self) -> float:
-        return self.price * self.discount_percent / 100
+        return self.__price * self.discount_percent / 100
 
     def get_discount_price(self) -> float:
-        return self.price * self.get_discount_amount()
+        return self.__price * self.get_discount_amount()
+
+    @property
+    def get_value(self) -> float:
+        return self.__price

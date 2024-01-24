@@ -11,7 +11,7 @@ def show_products(products):
 def show_individual_product(product):
     width = 18
     print(f"{'Name:':{width}} {product.name}")
-    print(f"{'Price:':{width}} {product.price:.2f}")
+    print(f"{'Price:':{width}} {product.get_value:.2f}")
     print(f"{'Discount percent:':{width}} {product.discount_percent:d}%")
     print(f"{'Discount amount:':{width}} {product.get_discount_amount():.2f}")
     print(f"{'Discount price':{width}} {product.get_discount_price():.2f}")
@@ -35,6 +35,7 @@ def get_individual_product(products):
         except ValueError:
             print("Invalid number, Please try again")
         print()
+
 
 
 def main():
