@@ -3,7 +3,7 @@ import random
 
 @dataclass
 class Die:
-    value:int = 1
+    value: int = 1
 
     def roll(self):
         self.value = random.randint(1,6)
