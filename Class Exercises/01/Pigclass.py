@@ -1,5 +1,8 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from Dice_Roller_Classes import Die
+from random import random
+
+
 
 @dataclass
 class Game:
@@ -8,7 +11,7 @@ class Game:
     __scoreThisTurn: int = 0
     __isTurnOver: bool = False
     __isGameOver: bool = False
-    __die: Die = Die()
+    __die: Die = field(default_factory=Die)
 
     def play(self):
         while not self.__isGameOver:
@@ -20,9 +23,9 @@ class Game:
         self.__isTurnOver = False
         while not self.__isTurnOver:
             choice = input('Roll or Hold? (r/h):  ')
-            if choice.lower == 'r':
+            if choice.lower() == 'r':
                 self.rollDie()
-            elif choice.lower == 'h':
+            elif choice.lower() == 'h':
                 self.holdTurn()
             else:
                 print('Invalid input')
