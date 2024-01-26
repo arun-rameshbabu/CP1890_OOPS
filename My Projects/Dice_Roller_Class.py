@@ -21,3 +21,7 @@ class Die:
     def roll(self):
         self.value = r.randint(1, 6)
         return self.value
+
+    @property
+    def get_value(self):
+        return self.value
