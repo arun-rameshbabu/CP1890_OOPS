@@ -1,16 +1,17 @@
-from random import randint
+import random
 from dataclasses import dataclass
 
 
 @dataclass
 class Die:
-    value: int = 1
+    __value: int = 1
 
     def roll(self):
-        self.value = randint(1, 6)
+        self.__value = random.randint(1, 6)
+
     @property
     def get_value(self):
-        return self.value
+        return self.__value
 
 
 class Dice:
