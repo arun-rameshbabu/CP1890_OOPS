@@ -79,7 +79,6 @@ def option1(player_list):
         print(f"{i:3d}{player.fullName:40}{player.position:6}{player.at_bats:>6d}{player.hits:>8d}")
 
 
-
 def main():
     title()
     menu = int(input("Menu option: "))
