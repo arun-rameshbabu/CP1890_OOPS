@@ -9,24 +9,13 @@ class Player:
     atBats: int = 0
     hits: int = 0
 
-    def firstName(self):
-        self.first_name = input("First name: ")
+    @property
+    def fullName(self):
+        return f"{self.first_name} {self.last_name}"
 
-    def lastName(self):
-        self.last_name = input("Last name: ")
-
-    def posit(self):
-        pos = ['C', '1B', '2B', '3B', 'SS', 'LF', 'CF', 'RF', 'F']
-        while True:
-            userPos = input("Position: ").upper()
-            if userPos in pos:
-                break
-            else:
-                print("Invalid position, try again\nPositions: ", pos)
-        self.position = userPos
-
-    def bats(self):
-        self.atBats = int(input("At Bats: "))
-
-    def hit(self):
-        self.hits = int(input("Hits: "))
+    @property
+    def avg(self):
+        try:
+            return self.hits / self.atBats
+        except ZeroDivisionError:
+            return 0.0
