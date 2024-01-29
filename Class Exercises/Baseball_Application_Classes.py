@@ -63,6 +63,31 @@ def display_lineup(players):
             print(
                 f'{i:<3d}{player.fullName:40}{player.position:6}{player.atBats:6d}{player.hits:6d}{player.battingAvg:8.3f}')
         print()
+def remove_player(players):
+    i = int(input('Enter Player number : '))
+    selected = players.pop(i-1)
+    print(f"{selected.fullName} was removed successfully from the lineup.")
+
+def move_player(players):
+    i = int(input('Enter Player number : '))
+    selected = players.pop(i-1)
+    x = int(input('Enter new position : '))
+    players.insert(x-1,selected)
+    print(f"{selected.fullName} was moved successfully")
+
+def edit_player_position(players):
+    i = int(input('Player to edit'))
+    player = players[i-1]
+    player.position = get_player_positon()
+    print(f"{player.fullName}'s position was updated")
+
+def edit_player_stats(players):
+    i = int(input('Enter player number: '))
+    player = players[i-1]
+    player.atBats = get_at_bats()
+    player.hits = get_hits()
+    print(f"{player.fullName}'s stats was updated")
+
 
 
 def display_seperator():
@@ -77,7 +102,11 @@ def display_menu():
     print('Menu Options:')
     print('1 - Display Lineup')
     print('2 - Add Player')
-    print('3 - Exit Program')
+    print('3 - Remove player')
+    print('4 - Move player')
+    print('5 - Edit player position')
+    print('6 - Edit player stats')
+    print('7 - Exit program')
 
 
 def display_positions():
@@ -104,6 +133,17 @@ def main():
             display_lineup(players)
         elif choice == 2:
             add_player(players)
+        elif choice == 3:
+            remove_player(players)
+        elif choice == 4:
+            move_player(players)
+        elif choice == 5:
+            edit_player_position(players)
+        elif choice == 6:
+            edit_player_stats(players)
+        elif choice == 7:
+            print('Bye')
+            break
         else:
             print('Invalid choice. Please try again\n')
             display_menu()
