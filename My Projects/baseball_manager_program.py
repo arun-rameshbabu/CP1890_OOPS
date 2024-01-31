@@ -116,9 +116,9 @@ def main():
         option = int(input('Menu option: '))
         if option == 1:
             lineup()
-        if option == 2:
+        elif option == 2:
             add_player()
-        if option == 7:
+        elif option == 7:
             print('Bye!')
             break
 
