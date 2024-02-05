@@ -7,7 +7,7 @@ while True:
     invoice_date = datetime.strptime(invoice, "%m/%d/%Y")
     due = "2/13/2024"
     due_date = datetime.strptime(due, "%m/%d/%Y")
-    days = (due_date - datetime.now())
+    days = (datetime.now() - due_date)
     print()
 
     print(f"Invoice Date: {invoice_date:%B %d, %Y}")
