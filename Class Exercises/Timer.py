@@ -1,13 +1,34 @@
 from datetime import datetime
 
-print("The Timer program\n")
 
-start = input("Press Enter to start...")
-starttime = datetime.now()
-print(f"Start time {starttime}")
+def main():
+    print("The Timer program\n")
 
-stop = input("\nPress Enter to stop...")
-stoptime = datetime.now()
-print(f"Start time {stoptime}")
+    # Start timer
+    input("Press Enter to start...")
+    start = datetime.now()
+    print(f"Start time: {start}")
 
-print("\nELAPSED TIME \nTime: ", stoptime - starttime)
+    # Stop timer
+    input("\nPress Enter to stop...")
+    stop = datetime.now()
+    print(f"Stop time:  {stop}")
+
+    # Difference
+    elapsed = stop - start
+    days = elapsed.days
+    minutes = elapsed.seconds
+    seconds = elapsed.seconds
+    microseconds = elapsed.microseconds
+
+    hours = minutes // 60
+    minutes = minutes % 60
+
+    print("\nELAPSED TIME \nTime: ", end="")
+    if days > 0:
+        print(f"{days}/", end="")
+    print(f"{hours}/{minutes}/{seconds}/{microseconds}")
+
+
+if __name__ == "__main__":
+    main()
