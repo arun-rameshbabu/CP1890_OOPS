@@ -43,7 +43,7 @@ def time_get(ver):
 
 
 def night_rate(arrival):
-    if arrival.month >= 6 and arrival.month <= 9:
+    if arrival.month >= 6 and arrival.month <= 8:
         night = "$105.00 (High season)"
     else:
         night = "$85.00"
