@@ -1,12 +1,14 @@
 from dataclasses import dataclass
 import random
 
+
 @dataclass
 class Die:
     value: int = 1
 
     def roll(self):
         self.value = random.randint(1,6)
+
 
 class Dice:
     def __init__(self):
