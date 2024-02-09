@@ -1,5 +1,6 @@
 import locale as lc
 
+
 def future_value(monthly_investment, y_interest, years):
     monthly_interest = y_interest / (12 * 100)
     months = years * 12
@@ -9,6 +10,7 @@ def future_value(monthly_investment, y_interest, years):
         month_interest = future_value * monthly_interest
         future_value += month_interest
     return future_value
+
 
 def main():
     choice = 'y'
@@ -29,6 +31,7 @@ def main():
 
         choice = input('Continue? (y/n): ').lower()
         print()
+
 
 if __name__ == '__main__':
     main()
