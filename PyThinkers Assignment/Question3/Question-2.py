@@ -25,7 +25,8 @@ class Customer:
             return f"{self.company} \n{self.address} \n{self.city}, {self.state} {self.zip}"
 
 
-def getCustomers():
+def getCustomers(object_list):
     with open('customers.csv', newline="") as file:
         reader = csv.reader(file)
         for row in reader:
+            object_list.append(Customer(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7]))
