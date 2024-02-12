@@ -28,7 +28,7 @@ class Rectangle:
 def main():
     # introduces the program
     print('Rectangle Calculator')
-    print()
+
 
     cont = 'y'
     # starts the loop for the program
@@ -36,7 +36,7 @@ def main():
         while True:
             try:
                 # takes inputs and handles errors upon entry
-                height = int(input(f"{'Height:':15} "))
+                height = int(input(f"\n{'Height:':15} "))
                 width = int(input(f"{'Width:':15} "))
                 rect = Rectangle(height, width)
                 print(f"{'Perimeter:':15} {rect.perimeter():.0f}")
@@ -48,7 +48,7 @@ def main():
             except Exception:
                 print('An unexpected error occurred!')
 
-        cont = input('Continue ? (y/n): ').lower()
+        cont = input('\nContinue ? (y/n): ').lower()
     print()
     print('Bye!') # exits the code or program
 
