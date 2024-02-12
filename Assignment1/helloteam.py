@@ -1,1 +1,1 @@
-print("HOWDY")
+print("HOWD")
