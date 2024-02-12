@@ -6,6 +6,7 @@ def get_game_date():
     return game_date
 
 def days_till_game():
+    print("Filler text")
 
 def main():
     print('=' * 50)
