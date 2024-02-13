@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43fd0477-6e50-41f7-a914-958ec4dce9c4" name="Changes" comment="class exercise">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/CP1890_OOPS_HTTP.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Class Exercises/Future_Value.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Formatting_Numbers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Investment_Exercise.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working_With_Numbers.py" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Group_Assignment_1/Question_2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +45,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/christopher.squires/Documents/CP1890_OOPS",
+    "last_opened_file_path": "C:/Users/alexander.moyles/Documents/GitHub/Assignment1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -81,6 +72,7 @@
       <updated>1704890482457</updated>
       <workItem from="1704890483596" duration="4319000" />
       <workItem from="1705061239948" duration="5039000" />
+      <workItem from="1707834993193" duration="44000" />
     </task>
     <task id="LOCAL-00001" summary="End of class 2">
       <option name="closed" value="true" />
