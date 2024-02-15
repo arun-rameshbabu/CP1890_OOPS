@@ -4,44 +4,44 @@ Assignment 1
 Question 2
 """
 
-import random
+from Classes import Deck
 
 
-Deck = []
-
+card_deck = Deck()
+hand = []
 
 def main():
-    cards(Deck)
-    print(f"Card Dealer\n\nI have shuffled a deck of {len(Deck)} cards.")
+    """
+    Main code for program, calls other functions.
+    """
+    card_deck.shuffle()
     
-    card_num = get_cards(Deck)
+    print(f"Card Dealer\n\nI have shuffled a deck of {card_deck.total()} cards.")
+    
+    card_num = get_cards()
     
     print("\nHere are your cards:")
     
-    random.shuffle(Deck)
+    print_cards(card_num)
     
-    print_cards(card_num, Deck)
-    
-    print(f"\nThere are {len(Deck)} cards left in the deck.\n\nGood Luck!")
-    
-
-def cards(Deck):
-    ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
-    suits = ["Clubs", "Diamonds", "Hearts", "Spades"]
-    
-    for suit in suits:
-        for rank in ranks:
-            card = [rank, suit]
-            Deck.append(card)
+    print(f"\nThere are {card_deck.total()} cards left in the deck.\n\nGood Luck!")
 
 
-def get_cards(Deck):
+def get_cards():
+    """
+    Obtains the number of cards the player/user wants.
+
+    Returns
+    -------
+    choice : int
+        Number of cards to give to the player/user.
+    """
     while True:
         try:
             while True:
                 choice = int(input("\nHow many cards would you like?: "))
-                if choice < 1 or choice > len(Deck):
-                    print(f"Must take atleast 1 card, and no more than the deck total ({len(Deck)}).")
+                if choice < 1 or choice > card_deck.total():
+                    print(f"Must take atleast 1 card, and no more than the deck total ({card_deck.total()}).")
                 else:
                     break
             return choice
@@ -49,12 +49,19 @@ def get_cards(Deck):
             print("Invalid entry, try again.")
 
 
-def print_cards(num, Deck):
-    hand = []
-    
+def print_cards(num):
+    """
+    Takes cards from the deck and puts them in the player/user's hand.
+    Prints the name of each card that the player/user receives.
+
+    Parameters
+    ----------
+    num : int
+        Number of cards to give to the player/user.
+    """
     while num > 0:
-        hand.append(Deck.pop(0))
-        print(f"{hand[-1][0]} of {hand[-1][1]}")
+        hand.append(card_deck.Deck.pop(0))
+        print(hand[-1].cardName())
         num -= 1
 
 
