@@ -5,6 +5,8 @@ Classes
 """
 
 from dataclasses import dataclass
+import random
+
 
 @dataclass
 class Card:
@@ -24,14 +26,14 @@ class Card:
         """
         return f"{self.rank} of {self.suit}"
 
-@dataclass
+
 class Deck:
     """
     Deck of Playing Cards
     """
-    deckCards:list = []
+    def __init__(self):
+        self.deckCards = []
     
-    @property
     def createDeck(self):
         """
         Generates deck.
@@ -44,4 +46,11 @@ class Deck:
                 card = Card(rank, suit)
                 self.deckCards.append(card)
     
+    @property
+    def shuffleDeck(self):
+        random.shuffle(self.deckCards)
+        
+    @property
+    def cardNum(self):
+        return f"{len(self.deckCards)}"
     
