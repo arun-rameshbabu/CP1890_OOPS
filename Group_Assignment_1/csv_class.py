@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+import csv
 
 @dataclass
 class Customer:
@@ -12,8 +13,21 @@ class Customer:
         self.city = city
         self.state = state
         self.zipCode = zipCode
-        self.fullAddress = state + ", " + city + ", " + address + ", " + zipCode
-        self.fullName = firstName + " " + lastName
+        self.fullAddress = f"{state}" + ", " + f"{city}" + ", " + f"{address}" + ", " + f"{zipCode}"
+        self.fullName = f"{firstName}" + " " + f"{lastName}"
 
-    def custInfo(self):
-        return self.fullName, self.fullAddress
+    def custNameAddress(self):
+        if self.company == "":
+            return f"{self.fullName}\n{self.fullAddress}."
+        else:
+            return f"{self.fullName}\n{self.fullAddress}\n{self.company}."
+
+    def custInfo(file_name):
+        customer_info = []
+        with open(file_name) as file:
+            info = csv.reader(file)
+            next(file)
+            for row in info:
+                customer_info.append(row)
+            return customer_info
+        custList = custInfo("customers.csv")
