@@ -12,6 +12,15 @@ class Customer:
     zipCode:str
 
     def custNameAddress(self):
+        """
+        Returns an f-string with customer information.
+
+        Returns
+        -------
+        str
+            Customer name and address.
+
+        """
         fullAddress = f"{self.state}" + ", " + f"{self.city}" + ", " + f"{self.address}" + ", " + f"{self.zipCode}"
         fullName = f"{self.firstName}" + " " + f"{self.lastName}"
         if self.company == "":
