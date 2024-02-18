@@ -1,5 +1,6 @@
 import Card_Class
 from dataclasses import dataclass, field
+import random
 
 class Deck:
     def __init__(self, cards = []):
@@ -12,6 +13,21 @@ class Deck:
             for rank in ranks:
                 card = Card_Class.Card(str(rank),suit)
                 self.cards.append(card.getCard())
+
+    def shuffle(self):
+        random.shuffle(self.cards)
+
+    def countCards(self):
+        return f"There are {len(self.cards)} cards left in the deck"
+
+    def dealCard(self):
+        random_deal = random.randint(1,len(self.cards))
+        random_deal = random_deal - 1
+        return self.cards.pop(random_deal)
+
+
+free = random.randint(1, 3)
+print(free)
 
 
 deck = Deck()
