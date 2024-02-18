@@ -1,6 +1,6 @@
 import csv
 
-
+#Creating Customer Class
 class Customer:
     def __init__(self, cust_id, first_name, last_name, company_name, address, city, state, zip):
         self.cust_id = cust_id
@@ -11,11 +11,11 @@ class Customer:
         self.city = city
         self.state = state
         self.zipcode = zip
-
+#Creating Property that returns full name from CSV
     @property
     def full_name(self):
         return f"{self.firstName} {self.lastName}"
-
+#Creating Propert that returns Full Address; extra line if company included
     @property
     def full_address(self):
         if self.company:
@@ -23,7 +23,7 @@ class Customer:
         else:
             return f"{self.address}\n{self.city}, {self.state} {self.zipcode}"
 
-
+#Creating function that reads customer data from CSV file and puts it into a list.
 def read_customer_data(file_path):
     customers = []
     with open(file_path, 'r') as csvfile:
@@ -42,7 +42,7 @@ def read_customer_data(file_path):
             customers.append(customer)
     return customers
 
-
+#Creating function that will display customers by ID
 def display_customer_by_id(customers, cust_id):
     for customer in customers:
         if customer.cust_id == cust_id:
@@ -51,11 +51,12 @@ def display_customer_by_id(customers, cust_id):
             return
     print(f"No customer with ID: {cust_id}.")
 
-
+#Main function that calls Customer class
 def main():
     file_path = 'customers.csv'
     choice = 'y'
     while choice == 'y':
+        #Headline
         print("Customer Viewer\n")
 
         # Read customer data from CSV file
@@ -65,7 +66,7 @@ def main():
         print()
         # Display customer information
         display_customer_by_id(customers_list, customer_id_input)
-
+        #Continue program input
         choice = input("Continue (y/n)?:  \n")
 
 
