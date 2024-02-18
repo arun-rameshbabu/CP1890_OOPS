@@ -92,7 +92,7 @@ def main():
                 access = True
                 #Sets access to True if customer is found
         if access == False:
-            #If access is still False after check, no customer found.
+            #If access is still False, no customer found.
             print("\nNo customer with that ID")
             loop = looper_check()
     print("\nBye!")
