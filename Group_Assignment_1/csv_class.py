@@ -1,26 +1,20 @@
 from dataclasses import dataclass
-import csv
 
 @dataclass
 class Customer:
-
-    def __init__(self, id, firstName, lastName, company, address, city, state, zipCode):
-        self.id = id
-        self.firstName = firstName
-        self.lastName = lastName
-        self.company = company
-        self.address = address
-        self.city = city
-        self.state = state
-        self.zipCode = zipCode
-        self.fullAddress = f"{state}" + ", " + f"{city}" + ", " + f"{address}" + ", " + f"{zipCode}"
-        self.fullName = f"{firstName}" + " " + f"{lastName}"
-        # I'll fix all that fullAddress and fullName stuff once I've figured out how to actually use them
+    custid:int
+    firstName:str
+    lastName:str
+    company:str
+    address:str
+    city:str
+    state:str
+    zipCode:str
 
     def custNameAddress(self):
+        fullAddress = f"{self.state}" + ", " + f"{self.city}" + ", " + f"{self.address}" + ", " + f"{self.zipCode}"
+        fullName = f"{self.firstName}" + " " + f"{self.lastName}"
         if self.company == "":
-            return f"{self.fullName}\n{self.fullAddress}."
+            return f"{fullName}\n{fullAddress}."
         else:
-            return f"{self.fullName}\n{self.fullAddress}\n{self.company}."
-
-    
+            return f"{fullName}\n{fullAddress}\n{self.company}."
