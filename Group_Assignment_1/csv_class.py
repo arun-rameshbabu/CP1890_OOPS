@@ -27,8 +27,6 @@ class Customer:
         # Running the entire file will print the csv file to the console to show it's pulling
         # the data. The new issue is I have no idea how to make objects from it. I'm going to
         # push this to the GitHub, maybe Alex can figure something out before I possibly do,
-        # Last Commit/Push failed, not sure why, I have to type SOMETHING for it to let me Commit
-        # again.
         customer_info = []
         with open(file_name) as file:
             info = csv.reader(file)
