@@ -70,20 +70,63 @@ class Rectangle:
     area: int = 0
 
     def get_height(self) -> int:
+        """
+        Gets height of rectangle from user.
+
+        Returns
+        -------
+        int
+            Rectangle height.
+        """
         self.height = int(input('Height: \t'))
         return self.height
 
 
     def get_width(self) -> int:
+        """
+        Gets width of rectangle from user.
+
+        Returns
+        -------
+        int
+            Rectangle width.
+        """
         self.width = int(input('Width:\t\t'))
         return self.width
 
 
     def get_perimeter(self):
+        """
+        Gets perimeter of rectangle.
+
+        Returns
+        -------
+        int
+            Rectangle perimeter.
+        """
         self.perimeter = (self.get_height()*2) + (self.get_width()*2)
         return self.perimeter
 
 
     def get_area(self):
+        """
+        Gets area of rectangle.
+
+        Returns
+        -------
+        int
+            Rectangle area.
+        """
         self.area = self.width * self.height
         return self.area
+    
+    def create(self):
+        """
+        Prints string representation of the rectangle.
+        """
+        space=" "
+        for i in range(self.height):
+            if i == 0 or i == self.height-1:
+                print("* " * self.width)
+            else:
+                print('*' + (space*(self.width-2))*2 + ' *')
