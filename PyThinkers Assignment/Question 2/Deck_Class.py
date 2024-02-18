@@ -16,6 +16,7 @@ class Deck:
 
     def shuffle(self):
         random.shuffle(self.cards)
+        print('I have shuffled a deck of 52 cards')
 
     def countCards(self):
         return f"There are {len(self.cards)} cards left in the deck"
@@ -32,4 +33,5 @@ print(free)
 
 deck = Deck()
 deck.getDeck()
+deck.shuffle()
 print(deck.cards)
