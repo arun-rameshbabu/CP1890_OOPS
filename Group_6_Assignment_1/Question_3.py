@@ -16,8 +16,12 @@ def main():
     while True:
         
         cust_list = read()
-                                                 #Test variables:
-        choice = int(input("\nEnter user ID: ")) #103 / 104 / 99
+        while True:
+            try:                                         #Test variables:
+                choice = int(input("\nEnter user ID: ")) #103 / 104 / 99
+                break
+            except ValueError:
+                print("Invalid entry, try again.")
         
         state = check_id(choice, cust_list)
         
