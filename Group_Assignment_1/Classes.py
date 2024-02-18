@@ -8,6 +8,7 @@ from dataclasses import dataclass
 import random
 
 
+# Question 2:
 @dataclass
 class Card:
     rank:str = ""
@@ -58,3 +59,31 @@ class Deck:
         Returns the number of cards in the deck.
         """
         return int(len(self.Deck))
+
+
+# Question 1
+@dataclass
+class Rectangle:
+    height: int = 0
+    width: int = 0
+    perimeter: int = 0
+    area: int = 0
+
+    def get_height(self) -> int:
+        self.height = int(input('Height: \t'))
+        return self.height
+
+
+    def get_width(self) -> int:
+        self.width = int(input('Width:\t\t'))
+        return self.width
+
+
+    def get_perimeter(self):
+        self.perimeter = (self.get_height()*2) + (self.get_width()*2)
+        return self.perimeter
+
+
+    def get_area(self):
+        self.area = self.width * self.height
+        return self.area
