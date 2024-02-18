@@ -4,17 +4,20 @@ Assignment 1
 Question 3
 """
 
-from csv_class import Customer
+from Classes import Customer
 import csv
 
 
 def main():
+    """
+    Main code for program, calls other functions.
+    """
+    print("Customer Viewer")
     while True:
-        print("Customer Viewer\n")
         
         cust_list = read()
-                                               #Test variables:
-        choice = int(input("Enter user ID: ")) #103 / 104 / 99
+                                                 #Test variables:
+        choice = int(input("\nEnter user ID: ")) #103 / 104 / 99
         
         state = check_id(choice, cust_list)
         
@@ -33,6 +36,14 @@ def main():
 
 
 def read():
+    """
+    Converts each row in the csv file into a customer object and appends those objects to a list.
+
+    Returns
+    -------
+    cust_info : list
+        List of customer objects.
+    """
     customer_info = []
     cust_info = []
     with open("customers.csv") as file:
@@ -47,6 +58,21 @@ def read():
 
 
 def check_id(choice, cust_list):
+    """
+    Checks the list of customers for one with a matching id to the user input.
+
+    Parameters
+    ----------
+    choice : int
+        User inputed id number.
+    cust_list : list
+        List of customer objects.
+
+    Returns
+    -------
+    name : str
+        Customer name and address info.
+    """
     name = "No customer with that ID."
     
     for customer in cust_list:

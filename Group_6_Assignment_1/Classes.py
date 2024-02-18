@@ -46,13 +46,11 @@ class Deck:
                 card = Card(rank, suit)
                 self.Deck.append(card)
     
-    
     def shuffle(self):
         """
         Shuffles the deck.
         """
         random.shuffle(self.Deck)
-    
     
     def total(self):
         """
@@ -81,7 +79,6 @@ class Rectangle:
         self.height = int(input('Height: \t'))
         return self.height
 
-
     def get_width(self) -> int:
         """
         Gets width of rectangle from user.
@@ -94,7 +91,6 @@ class Rectangle:
         self.width = int(input('Width:\t\t'))
         return self.width
 
-
     def get_perimeter(self):
         """
         Gets perimeter of rectangle.
@@ -106,7 +102,6 @@ class Rectangle:
         """
         self.perimeter = (self.get_height()*2) + (self.get_width()*2)
         return self.perimeter
-
 
     def get_area(self):
         """
@@ -130,3 +125,32 @@ class Rectangle:
                 print("* " * self.width)
             else:
                 print('*' + (space*(self.width-2))*2 + ' *')
+
+
+# Question 3:
+@dataclass
+class Customer:
+    custid:int
+    firstName:str
+    lastName:str
+    company:str
+    address:str
+    city:str
+    state:str
+    zipCode:str
+
+    def custNameAddress(self):
+        """
+        Returns an f-string with customer information.
+
+        Returns
+        -------
+        str
+            Customer name and address info.
+        """
+        fullAddress = f"{self.address}\n" + f"{self.city}" + ", " + f"{self.state}" + f" {self.zipCode}"
+        fullName = f"{self.firstName}" + " " + f"{self.lastName}"
+        if self.company == "":
+            return f"{fullName}\n{fullAddress}"
+        else:
+            return f"{fullName}\n{self.company}\n{fullAddress}"
