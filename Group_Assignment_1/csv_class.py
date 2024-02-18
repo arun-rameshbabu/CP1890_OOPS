@@ -21,9 +21,9 @@ class Customer:
             Customer name and address.
 
         """
-        fullAddress = f"{self.state}" + ", " + f"{self.city}" + ", " + f"{self.address}" + ", " + f"{self.zipCode}"
+        fullAddress = f"{self.address}\n" + f"{self.city}" + ", " + f"{self.state}" + f"{self.zipCode}"
         fullName = f"{self.firstName}" + " " + f"{self.lastName}"
         if self.company == "":
-            return f"{fullName}\n{fullAddress}."
+            return f"{fullName}\n{fullAddress}"
         else:
-            return f"{fullName}\n{fullAddress}\n{self.company}."
+            return f"{fullName}\n{self.company}\n{fullAddress}"
