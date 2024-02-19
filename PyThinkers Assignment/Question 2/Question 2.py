@@ -1,28 +1,13 @@
 from Deck_Class import Deck
 
-
-def cardsAmount() -> int:
-    """
-
-    :return: int
-    """
-    while True:  # handles value error
-        try:
-            cards_ammount = int(input("How many cards would you like? :  "))
-            return cards_ammount
-            break
-        except ValueError:
-            print('Invalid input!')
-
-
 def main():
     print("Card Dealer")
     print()
-    deck = Deck()  # constructs the deck object
-    deck.getDeck()  # adds the cards to the deck
-    deck.shuffle()  # shuffles the deck
+    deck = Deck()
+    deck.getDeck()
+    deck.shuffle()
     print()
-    cards_amount = cardsAmount()
+    cards_amount = int(input("How many cards would you like?:  "))
     print()
     print("Here are your Cards:")
     deck.dealCard(cards_amount)
@@ -30,6 +15,7 @@ def main():
     print(deck.countCards())
     print()
     print("Good luck!")
+
 
 
 if __name__ == "__main__":

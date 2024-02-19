@@ -1,5 +1,4 @@
 import Card_Class
-from dataclasses import dataclass, field
 import random
 
 class Deck:
@@ -16,7 +15,7 @@ class Deck:
 
     def shuffle(self):
         random.shuffle(self.cards)
-        print('I have shuffled a deck of 52 cards')
+        print('I have shuffled a deck of 52 cards.')
 
     def countCards(self):
         return f"There are {len(self.cards)} cards left in the deck."
