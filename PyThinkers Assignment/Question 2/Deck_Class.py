@@ -19,16 +19,10 @@ class Deck:
         print('I have shuffled a deck of 52 cards')
 
     def countCards(self):
-        return f"There are {len(self.cards)} cards left in the deck"
+        return f"There are {len(self.cards)} cards left in the deck."
 
     def dealCard(self, num:int):
         for i in range(num):
             card = self.cards.pop()
             print(card.getCard())
 
-
-deck = Deck()
-deck.getDeck()
-deck.shuffle()
-deck.dealCard(5)
-print(deck.countCards())
