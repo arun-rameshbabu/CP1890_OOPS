@@ -26,6 +26,7 @@ class Rectangle:
 
 
 def main():
+
     # introduces the program
     print('Rectangle Calculator')
 
