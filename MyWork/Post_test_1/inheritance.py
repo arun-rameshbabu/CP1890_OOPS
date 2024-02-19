@@ -25,7 +25,7 @@ from dataclasses import dataclass
 class Product:
     name: str = ""
     price: float = 0.0
-    discountPercent: float = 0.0
+    discountPercent: float = 0
 
     def getDiscountAmount(self) -> float:
         return self.price * (self.discountPercent / 100)
@@ -36,14 +36,23 @@ class Product:
     def getDescription(self) -> str:
         return self.name
 
-
+"""
 @dataclass
 class Book(Product):
     author: str = ''
 
     def getDescription(self) -> str:
         return f"{Product.getDescription(self)} by {self.author}"
+"""
 
+class Book(Product):
+    def __init__(self, name='', price=0.0, discountPercent=0, author=''):
+        Product.__init__(self, name, price, discountPercent)
+
+        self.author = author
+
+    def getDescription(self) -> str:
+        return f"{Product.getDescription(self)} by {self.author}"
 
 @dataclass
 class Movie(Product):
@@ -58,9 +67,14 @@ def main():
     book1 = Book("The Shining", 12.99, 10, "Stephen King")
     movie1 = Movie("Venom", 12.99, 25, 2013)
 
-    print(f"{product1.getDescription()}{product1.getDiscountPrice():26.2f}")
-    print(f"{book1.getDescription()}{book1.getDiscountPrice():14.2f}")
-    print(f"{movie1.getDescription()}{movie1.getDiscountPrice():30.2f}")
+    print(f"{product1.getDescription():30} ${product1.getDiscountPrice():5.2f}")
+    print(f"{book1.getDescription():30} ${book1.getDiscountPrice():5.2f}")
+    print(f"{movie1.getDescription():30} ${movie1.getDiscountPrice():5.2f}")
+
+    print("")
+    print(isinstance(movie1, Movie))
+    print(isinstance(movie1, Product))
+    print(isinstance(movie1, Book))
 
 
 if __name__ == "__main__":
