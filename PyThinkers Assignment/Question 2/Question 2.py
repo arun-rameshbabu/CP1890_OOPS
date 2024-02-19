@@ -7,7 +7,7 @@ def main():
     deck.getDeck()
     deck.shuffle()
     print()
-    cards_amount = int(input("How many cards would you like?   "))
+    cards_amount = int(input("How many cards would you like?:  "))
     print()
     print("Here are your Cards:")
     deck.dealCard(cards_amount)
