@@ -1,4 +1,3 @@
-from Card_Class import Card
 from Deck_Class import Deck
 
 def main():
