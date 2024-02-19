@@ -95,7 +95,8 @@ def main():
             #If access is still False, no customer found.
             print("\nNo customer with that ID")
             loop = looper_check()
-    print("\nBye!")
+    print()
+    print("Bye!")
 
 
 if __name__ == '__main__':

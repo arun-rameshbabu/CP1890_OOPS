@@ -26,6 +26,7 @@ class Rectangle:
 
 
 def main():
+
     # introduces the program
     print('Rectangle Calculator')
 
@@ -50,7 +51,7 @@ def main():
 
         cont = input('\nContinue ? (y/n): ').lower()
     print()
-    print('Bye!') # exits the code or program
+    print('Bye!')# exits the code or program
 
 
 if __name__ == '__main__':
