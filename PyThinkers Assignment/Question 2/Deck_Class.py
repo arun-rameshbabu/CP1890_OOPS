@@ -12,7 +12,7 @@ class Deck:
         for suit in suits:
             for rank in ranks:
                 card = Card_Class.Card(str(rank),suit)
-                self.cards.append(card.getCard())
+                self.cards.append(card)
 
     def shuffle(self):
         random.shuffle(self.cards)
@@ -21,17 +21,14 @@ class Deck:
     def countCards(self):
         return f"There are {len(self.cards)} cards left in the deck"
 
-    def dealCard(self):
-        random_deal = random.randint(1,len(self.cards))
-        random_deal = random_deal - 1
-        return self.cards.pop(random_deal)
-
-
-free = random.randint(1, 3)
-print(free)
+    def dealCard(self, num:int):
+        for i in range(num):
+            card = self.cards.pop()
+            print(card.getCard())
 
 
 deck = Deck()
 deck.getDeck()
 deck.shuffle()
-print(deck.cards)
+deck.dealCard(5)
+print(deck.countCards())
