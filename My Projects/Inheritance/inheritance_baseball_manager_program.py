@@ -1,16 +1,16 @@
-from inheritance_baseball_manager_class import Player
+from BB_inheritance_arun import Player, Lineup
 from datetime import datetime
 
 positions = ('C', '1B', '2B', '3B', 'SS', 'LF', 'CF', 'RF', 'P')
-team_list = [Player('Tommy', 'La Stella', '3B', 1316, 360),
-             Player('Mike', 'Yastrzemski', 'RF', 563, 168),
-             Player('Donovan', 'Solano', '2B', 1473, 407),
-             Player('Buster', 'Posey', 'C', 4575, 1380),
-             Player('Brandon', 'Belt', '1B', 3811, 1003),
-             Player('Brandon', 'Crawford', 'SS', 4402, 1099),
-             Player('Alex', 'Dickerson', 'LF', 586, 160),
-             Player('Austin', 'Slater', 'CF', 569, 147),
-             Player('Kevin', 'Gausman', 'P', 56, 2)]
+# team_list = [Player('Tommy', 'La Stella', '3B', 1316, 360),
+#              Player('Mike', 'Yastrzemski', 'RF', 563, 168),
+#              Player('Donovan', 'Solano', '2B', 1473, 407),
+#              Player('Buster', 'Posey', 'C', 4575, 1380),
+#              Player('Brandon', 'Belt', '1B', 3811, 1003),
+#              Player('Brandon', 'Crawford', 'SS', 4402, 1099),
+#              Player('Alex', 'Dickerson', 'LF', 586, 160),
+#              Player('Austin', 'Slater', 'CF', 569, 147),
+#              Player('Kevin', 'Gausman', 'P', 56, 2)]
 
 
 def display_title():
@@ -49,27 +49,27 @@ def display_positions():
         print(position + ',', end=' ')
 
 
-def lineup():
-    if team_list == None:
-        print('No players in lineup')
-    else:
-        print(f"{'':3}{'Player':40}{'POS':6}{'AB':>6}{'H':>6}{'AVG':>6}")
-        print('-' * 80)
-        for i, player in enumerate(team_list):
-            print(f"{i+1:<3d}{player.full_name:40}{player.position:6}{player.atbats:6d}{player.hits:6d}{player.get_average:8.3f}")
-        print()
+# def lineup():
+#     if team_list == None:
+#         print('No players in lineup')
+#     else:
+#         print(f"{'':3}{'Player':40}{'POS':6}{'AB':>6}{'H':>6}{'AVG':>6}")
+#         print('-' * 80)
+#         for i, player in enumerate(team_list):
+#             print(f"{i+1:<3d}{player.full_name:40}{player.position:6}{player.atbats:6d}{player.hits:6d}{player.get_average:8.3f}")
+#         print()
 
 
-def add_player():
-    first_name = input('First Name: ')
-    last_name = input('Last Name: ')
-    position = get_player_position()
-    at_bats = get_at_bats()
-    hits = get_hits(at_bats)
-
-    player = Player(first_name, last_name, position, at_bats, hits)
-    team_list.append(player)
-    print(f'Player {player.full_name} was added.')
+# def add_player():
+#     first_name = input('First Name: ')
+#     last_name = input('Last Name: ')
+#     position = get_player_position()
+#     at_bats = get_at_bats()
+#     hits = get_hits(at_bats)
+#
+#     player = Player(first_name, last_name, position, at_bats, hits)
+#     team_list.append(player)
+#     print(f'Player {player.full_name} was added.')
 
 
 def get_player_position():
@@ -111,13 +111,14 @@ def get_hits(at_bats):
 
 
 def main():
+    lineup = Lineup([])
     display_title()
     while True:
         option = int(input('Menu option: '))
         if option == 1:
-            lineup()
+            print()
         elif option == 2:
-            add_player()
+            lineup.add_player()
         elif option == 7:
             print('Bye!')
             break
