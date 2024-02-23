@@ -18,12 +18,6 @@ def title():
     print("=" * 75)
 
 
-def players():
-    player_list = [["Tommy La Stella", "3B", 1316, 360],
-                   ["Mike Yastrzemski", "RF", 536, 168],
-                   ["Donovan Solano", "2B", 1473, 407]]
-    return player_list
-
 def get_pos():
     pos_list = ['C', '1B', '2B', '3B', 'SS', 'LF', 'CF', 'RF', 'F']
     while True:
@@ -62,23 +56,16 @@ def get_hits(at_bats):
             return hits
 
 
-def option2(player_list):
-    first_name = input("First name: ").title()
-    last_name = input("Last name: ").title()
-    position = get_pos()
-    at_bats = get_at_bats()
-    hits = get_hits(at_bats)
-
-    player = Player(first_name, last_name, position, at_bats, hits)
-    player_list.append(player)
-    print(f"{player.fullName} was added.")
+def add():
+    Lineup.add_player()
 
 
-def option1(player_list):
-    print(f"{'':3}{'Player':40}{'POS':6}{'AB':>6}{'AVG':>8}")
+def player_list():
+    lineup = Lineup()
+    print(f"{'':3}{'Player':40}{'POS':6}{'AB':>6}{'H':>8}{'AVG':>10}")
     print("-" * 75)
-    for i, player in enumerate(player_list):
-        print(f"{i:3d}{player.fullName:40}{player.position:6}{player.at_bats:>6d}{player.hits:>8d}")
+    for player in lineup:
+        print(player)
 
 
 def main():
@@ -86,13 +73,20 @@ def main():
     menu = int(input("Menu option: "))
     while menu != 7:
         if menu == 1:
-            option1(players())
+            player_list()
             menu = int(input("\nMenu option: "))
         elif menu == 2:
-            option2(players())
+            add()
             menu = int(input("\nMenu option: "))
-        else:
+        elif menu == 3:
+            num = input("Number of player to remove.")
+            Lineup.removePlayer(num)
+        elif menu == 7:
             break
+        else:
+            print("Invalid entry, please try again.")
+            menu = int(input("\nMenu option: "))
+
     print("Bye!")
 
 
