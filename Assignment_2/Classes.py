@@ -5,6 +5,7 @@ Classes
 """
 
 from dataclasses import dataclass
+from random import randint
 
 # Question 1:
 @dataclass
@@ -26,3 +27,44 @@ class Customer(Person):
 @dataclass
 class Employee(Person):
     ssn: str
+
+# Question 2:
+def rand_int():
+    """
+    Generates a random integer from 1 to 100
+    
+    Returns
+    -------
+    TYPE
+        DESCRIPTION.
+
+    """
+    return randint(1, 100)
+
+class RandomIntList(list):
+    def __init__(self, num=0):
+        num = int(num)
+        while num > 0:
+            self.append(rand_int())
+            num -= 1
+
+    @property
+    def count(self):
+        return len(self)
+
+    @property
+    def total(self):
+        x = 0
+        for i in self:
+            x += i
+        return x
+
+    @property
+    def average(self):
+        return float(self.total / self.count)
+    
+    def __str__(self):
+        string = ''
+        for i in self:
+            string += f'{i} '
+        return string
