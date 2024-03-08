@@ -20,7 +20,7 @@ def main():
             if pers_type == 'e' or pers_type == 'c':
                 break
             else:
-                print("\nInvalid Entry, try again.")
+                print("\nInvalid input, try again.")
         
         entry = data_entry(pers_type)
         
@@ -35,10 +35,8 @@ def main():
             print(f"{'Email:':<12}{entry.email}")
             print(f"{'SSN:':<12}{entry.ssn}")
             
-        cont = input("\nContinue? (y/n): ").lower()
+        cont = contin()
     
-    if cont != 'n':
-        print("Invalid entry, ending program.")
     print("\nBye!")
 
 
@@ -69,6 +67,14 @@ def data_entry(pers_type):
         person = Employee(name1, name2, mail, snum)
     return person
 
+def contin():
+    while True:
+        cont = input("\nContinue? (y/n): ").lower()
+        if cont == 'n' or cont == 'y':
+            break
+        else:
+            print("\nInvalid input, try again.")
+    return cont
 
 if __name__ == "__main__":
     main()

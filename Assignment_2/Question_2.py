@@ -32,7 +32,7 @@ def contin():
         if cont == 'n' or cont == 'y':
             break
         else:
-            print("Invalid Input\n")
+            print("\nInvalid input, try again.")
     return cont
     
 
