@@ -11,6 +11,7 @@ class Player:
         __wins: int = 0
         __losses: int = 0
 
+    @property
     def generateRoshambo(self):
         self.roshambo = lis[0]
 
@@ -55,6 +56,7 @@ class Lisa(Player):
     def __post_init__(self):
         self.name = "Lisa"
 
+    @property
     def generateRoshambo(self):
         ran = random.randint(0, 2)
         self.roshambo = lis[ran]

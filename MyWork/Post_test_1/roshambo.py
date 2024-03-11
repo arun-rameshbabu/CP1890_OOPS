@@ -25,7 +25,7 @@ def main():
         ans = rps(choice)
         user.roshambo = ans
 
-        opp.generateRoshambo()
+        opp.generateRoshambo
 
         print(user)
         print(opp)
