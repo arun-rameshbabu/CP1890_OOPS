@@ -23,3 +23,13 @@ sr_num | genre | name | year | actors
        |       |      |      |          
 
 """
+
+"""
+sqlite3
+
+conn = connect("path_to_database")
+
+c = conn.cursor()
+
+
+"""

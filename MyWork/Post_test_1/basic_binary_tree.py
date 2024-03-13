@@ -61,6 +61,8 @@ tree = BinaryTree()
 tree.add(10)
 tree.add(3)
 tree.add(20)
+tree.printTree()
+print("\n")
 tree.add(15)
 tree.add(25)
 
