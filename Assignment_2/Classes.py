@@ -28,6 +28,7 @@ class Customer(Person):
 class Employee(Person):
     ssn: str
 
+
 # Question 2:
 def rand_int():
     """
@@ -35,9 +36,8 @@ def rand_int():
     
     Returns
     -------
-    TYPE
-        DESCRIPTION.
-
+    Integer
+        A random integer from 1-100.
     """
     return randint(1, 100)
 
@@ -66,5 +66,5 @@ class RandomIntList(list):
     def __str__(self):
         string = ''
         for i in self:
-            string += f'{i} '
+            string += f'{i}, '
         return string

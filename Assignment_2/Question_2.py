@@ -8,8 +8,13 @@ from Classes import RandomIntList
 
 def main():
     print("Random Integer List")
-        
-    num = input("\nHow many random integers should the list contain?: ")
+    
+    while True:
+        try:
+            num = int(input("\nHow many random integers should the list contain?: "))
+            break
+        except ValueError:
+            print("Invalid integer, try again.")
     
     while True:
         int_list = RandomIntList(num)
