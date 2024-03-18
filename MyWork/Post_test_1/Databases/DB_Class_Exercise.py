@@ -159,5 +159,15 @@ def sort_year():
     rows = c.fetchall()
     conn.close
 
+def del_movie():
+    query5 = "DELETE FROM movies where id = {}".format(int(input("Movie ID: ")))
+
+    conn = sqlite3.connect('movies.sqlite')
+    c = conn.cursor()
+    c.execute(query5)
+    conn.commit()
+    print("Movie has been deleted.")
+    conn.close
+
 if __name__ == "__main__":
     main()
