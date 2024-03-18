@@ -1,4 +1,4 @@
-from Q4_Classes import Event, Conference
+from Classes import Event, Conference
 import datetime
 
 event = Event('Birthday Party', 'New York', datetime.datetime(2023, 8, 25),
