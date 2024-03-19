@@ -45,8 +45,9 @@ def employee_creation():
 
 
 def main():
+    loop = 'y'
     print("Customer/Employee Date Entry")
-    while True:
+    while loop == 'y':
         c_or_e = str(input("\nCustomer or employee? (c/e): ")).lower()
 
         if c_or_e == 'c':
@@ -68,12 +69,14 @@ def main():
             print(f"Email:\t{person.email_address}")
             print(f"SSN:\t{person.social_security_number}")
 
-        loop = input("\nContinue? (y/n): ").lower()
-        if loop == "y":
-            continue
-        elif loop == "n":
-            print("\nBye!")
-            break
+        while loop != 'n':
+            loop = input("\nContinue? (y/n): ").lower()
+            if loop == "y":
+                break
+            elif loop == "n":
+                print("\nBye!")
+            else:
+                print("Invalid input, try again.")
 
 
 if __name__ == "__main__":
