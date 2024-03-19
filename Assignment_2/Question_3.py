@@ -26,7 +26,7 @@ class Cat(Animal):
         print('Meow!')
 
 
-# Given sample code from text
+# Given sample code from the question
 dog = Dog("Max", "Dog", "Golden Retriever")
 cat = Cat("Whiskers", "Cat", "Orange")
 print("Dog:")
