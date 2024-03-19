@@ -74,6 +74,43 @@ class RandomIntList(list):
         return string
 
 
+# Question 3:
+@dataclass
+class Animal:
+
+    name:str
+    species:str
+
+    def animInfo(self, name, species):
+        self.name = name
+        self.species = species
+        return self.name, self.species
+
+    def speak(self):
+        print("This animal meows/woofs.")
+
+
+class Dog(Animal):
+
+
+    def __init__(self, name="", species="", breed=""):
+        Animal.__init__(self, name, species)
+        self.breed = breed
+
+    def speak(self):
+        print("Woof!")
+
+
+class Cat(Animal):
+
+
+    def __init__(self, name="", species="", color=""):
+        Animal.__init__(self, name, species)
+        self.color = color
+
+    def speak(self):
+        print("Meow!")
+
 # Question 4:
 class Event:
 
@@ -85,15 +122,27 @@ class Event:
 
     def duration(self):
         """
-        Returns Duration of event.
+        Returns duration of event.
         """
-        return self.end_date - self.start_date
+        dur = self.end_date - self.start_date
+        return dur.days
+
 
 class Conference(Event):
     def __init__(self, name='', location='', start_date='', end_date='', attendees=''):
         Event.__init__(self, name, location, start_date, end_date)
 
         self.attendees = attendees
+
+    def duration(self):
+        """
+        Returns duration of conference.
+        """
+        diff = self.end_date - self.start_date
+        days, seconds = diff.days, diff.seconds
+        hours = days * 24 + seconds // 3600
+        return hours
+
 
 # Question 5:
 @dataclass

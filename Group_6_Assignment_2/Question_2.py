@@ -7,6 +7,9 @@ Question 2
 from Classes import RandomIntList
 
 def main():
+    """
+    Main code for program.
+    """
     print("Random Integer List")
     
     while True:
@@ -32,6 +35,9 @@ def main():
             continue
 
 def contin():
+    """
+    Recieves and validates input from user for if they want to continue
+    """
     while True:
         cont = input("\nContinue? (y/n): ").lower()
         if cont == 'n' or cont == 'y':

@@ -9,7 +9,7 @@ from Classes import Customer, Employee
 
 def main():
     """
-    Main code for program, calls data_entry function.
+    Main code for program, calls other functions and displays entries.
     """
     print("Customer/Employee Data Entry")
     cont = 'y'
@@ -68,6 +68,9 @@ def data_entry(pers_type):
     return person
 
 def contin():
+    """
+    Recieves and validates input from user for if they want to continue
+    """
     while True:
         cont = input("\nContinue? (y/n): ").lower()
         if cont == 'n' or cont == 'y':
