@@ -21,15 +21,15 @@ class RandomIntList(list):
 
 
 def main():
+    while True:
+        number = int(input("\nHow many random integers should the list contain?: "))
+        if number < 1 or number > 100:
+            print("please enter a valid number")
+        else:
+            break
     choice = "y"
     while choice == "y":
         print("Random Integer List")
-        while True:
-            number = int(input("\nHow many random integers should the list contain?: "))
-            if number < 1 or number > 100:
-                print("please enter a valid number")
-            else:
-                break
         print("\nRandom Integers")
         print("="*15)
         int_list = RandomIntList(number)
