@@ -10,6 +10,7 @@ class Event:
     end_date: datetime = datetime(1, 1, 1)
 
     def duration(self):
+        # Calculates the amount of days of the event
         time = (self.end_date-self.start_date).days
         return time
 
@@ -19,6 +20,7 @@ class Conference(Event):
     attendees: int = 0
 
     def duration(self):
+        # Changes the amount of days into the amount of hours of the conference
         return Event.duration(self) * 24
 
 

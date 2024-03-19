@@ -9,6 +9,7 @@ class Task:
     due_date: datetime = datetime(1, 1, 1)
 
     def status(self):
+        # Changes result of the task depending on the date input and the date now
         if datetime.now() > self.due_date:
             return "Completed"
         else:
@@ -21,6 +22,8 @@ class Homework(Task):
     task_status: str = 'Not Started.'
 
     def status(self):
+        # Changes the status of the task to be homework
+        # If task_status has not been changed it returns not started.
         if datetime.now() > self.due_date:
             return "Completed"
         else:

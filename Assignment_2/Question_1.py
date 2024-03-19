@@ -9,6 +9,7 @@ class Person:
 
     @property
     def full_name(self):
+        #  Returns the full name as first name and last name capitalized
         return f'{self.first_name} {self.last_name}'.title()
 
 
@@ -36,8 +37,8 @@ def main():
 
         user = get_info(user_input)
 
-        if isinstance(user, Customer):
-            print('\nCUSTOMER')
+        if isinstance(user, Customer):              # Checks if the class is either Customer or Employee. Changes format
+            print('\nCUSTOMER')                     # Depending on the class.
             print(f'Name:\t\t{user.full_name}')
             print(f'Email:\t\t{user.email}')
             print(f'Number:\t\t{user.number}\n')
@@ -67,6 +68,7 @@ def get_info(user_input):
     last_name = input('Last Name: ')
     email = input('Email: ')
 
+    # Gathering user input for customer or employee information and changes questions depending on the user.
     if user_input == 'c':
         number = input('Number: ')
         user = Customer(first_name=first_name, last_name=last_name, email=email, number=number)

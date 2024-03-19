@@ -16,14 +16,17 @@ class Dog(Animal):
     breed: str = ''
 
     def speak(self):
+        # Changes the speak method to say Woof!
         sound = Animal.speak(self) + "Woof!"
         print(sound)
+
 
 @dataclass
 class Cat(Animal):
     color: str = ''
 
     def speak(self):
+        # Changes the speak method to say Meow!
         sound = Animal.speak(self) + "Meow!"
         print(sound)
 
