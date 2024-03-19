@@ -23,7 +23,7 @@ class Homework(Task):
 
     def status(self):
         # Changes the status of the task to be homework
-        # If task_status has not been changed it returns not started.
+        # If task_status has not been changed it returns not started if the day has not been passed.
         if datetime.now() > self.due_date:
             return "Completed"
         else:
