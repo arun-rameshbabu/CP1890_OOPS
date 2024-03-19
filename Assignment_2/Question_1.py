@@ -68,7 +68,7 @@ def main():
             print(f"Email:\t{person.email_address}")
             print(f"SSN:\t{person.social_security_number}")
 
-        loop = input("\nContinue? (y/n): ")
+        loop = input("\nContinue? (y/n): ").lower()
         if loop == "y":
             continue
         elif loop == "n":
