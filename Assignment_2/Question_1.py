@@ -22,6 +22,7 @@ class Employee(Person):
     social_security_number: str = ''
 
 
+# Takes inputs and returns a Customer object
 def customer_creation():
     print("\nDATA ENTRY")
     f_name = str(input("First name: "))
@@ -33,6 +34,7 @@ def customer_creation():
     return customer
 
 
+# Takes inputs and returns an Employee object
 def employee_creation():
     print("\nDATA ENTRY")
     f_name = str(input("First name: ")).capitalize()
@@ -58,6 +60,7 @@ def main():
             print("Invalid input, try again.")
             continue
 
+# Checks to see if the person variable is an Employee or Customer
         if isinstance(person, Customer):
             print("\nCUSTOMER")
             print(f"Name:\t{person.full_name}")
@@ -69,6 +72,7 @@ def main():
             print(f"Email:\t{person.email_address}")
             print(f"SSN:\t{person.social_security_number}")
 
+# Loop used to get an appropriate input
         while loop != 'n':
             loop = input("\nContinue? (y/n): ").lower()
             if loop == "y":
