@@ -44,7 +44,7 @@ def main():
         # Gets users desired amount of integers and validates the input
         try:
             amount = int(input('How many random integers should the list contain?: '))
-            if amount < 0:
+            if amount <= 0:
                 print('Enter a positive integer')
                 continue
             break
