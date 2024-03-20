@@ -6,7 +6,7 @@ Classes
 
 from dataclasses import dataclass
 from random import randint
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # Question 1:
 @dataclass
@@ -165,11 +165,22 @@ class Task:
 class Homework(Task):
     subject: str = ""
     
+    def __post_init__(self):
+        """
+        task_status was semi-unclear in the instructions,
+        so I set it to be the same as the due date so that if it is currently
+        the due date of the homework the progress status will be "In progress"
+        as one would assume the project to be started by that point.
+        """
+        self.task_status = self.due_date
+    
     def status(self):
         """
         Returns current homework task status.
         """
-        if self.due_date < datetime.now():
+        if datetime.now() == self.task_status:
+            return "In Progress"
+        elif self.due_date < datetime.now():
             return "Completed"
         else:
             return "Not Started"

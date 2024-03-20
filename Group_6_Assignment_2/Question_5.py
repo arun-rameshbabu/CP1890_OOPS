@@ -7,7 +7,7 @@ Question 5
 from Classes import Homework, Meeting
 from datetime import datetime
 
-homework_date = datetime(2024, 10, 15)
+homework_date = datetime.now()
 meeting_date = datetime(2024, 9, 20)
 
 homework = Homework("Science Homework", "Complete excersizes 2-7", homework_date, "Science")
